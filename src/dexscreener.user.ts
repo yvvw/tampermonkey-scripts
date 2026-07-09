@@ -2,7 +2,7 @@
 // @name         Better DEX Screener
 // @namespace    https://github.com/yvvw/browser-scripts
 // @homepageURL  https://github.com/yvvw/browser-scripts/blob/main/src/dexscreener.user.ts
-// @version      0.0.34
+// @version      0.0.35
 // @description  展开关注列表、添加外部跳转、关闭广告
 // @author       yvvw
 // @icon         https://dexscreener.com/favicon.ico
@@ -96,7 +96,7 @@ function createExternalLinkEl(text: string, href: string) {
   return el
 }
 
-const SUPPORT_CHAINS = ['ethereum', 'base', 'solana', 'tron', 'bsc']
+const SUPPORT_CHAINS = ['ethereum', 'base', 'solana', 'tron', 'bsc', 'robinhood']
 
 function getChainFromPath() {
   const parts = document.location.pathname.split('/')
@@ -143,6 +143,10 @@ function getSwapLink(chain: string, token: string) {
     const chain = 56
     return `https://matcha.xyz/trade?buyChain=${chain}&sellChain=${chain}&buyAddress=${token}&sellAddress=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`
   }
+  if (chain === 'robinhood') {
+    const chain = 4663
+    return `https://matcha.xyz/trade?buyChain=${chain}&sellChain=${chain}&buyAddress=${token}&sellAddress=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`
+  }
   logger.warn(`${chain} swap unsupported`)
   return null
 }
@@ -176,6 +180,9 @@ function getGmGnLink(chain: string, token: string) {
   }
   if (chain === 'bsc') {
     return `https://gmgn.ai/bsc/token/${token}`
+  }
+  if (chain === 'robinhood') {
+    return `https://gmgn.ai/robinhood/token/${token}`
   }
   logger.warn(`${chain} gmgn unsupported`)
   return null
