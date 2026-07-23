@@ -2,7 +2,7 @@
 // @name         Better DEX Screener
 // @namespace    https://github.com/yvvw/browser-scripts
 // @homepageURL  https://github.com/yvvw/browser-scripts/blob/main/src/dexscreener.user.ts
-// @version      0.0.35
+// @version      0.0.36
 // @description  展开关注列表、添加外部跳转、关闭广告
 // @author       yvvw
 // @icon         https://dexscreener.com/favicon.ico
@@ -128,11 +128,11 @@ function getSwapLink(chain: string, token: string) {
   if (chain === 'ethereum') {
     // https://app.uniswap.org/swap?chain=ethereum&inputCurrency=ETH&outputCurrency=${token}
     const chain = 1
-    return `https://matcha.xyz/trade?buyChain=${chain}&sellChain=${chain}&buyAddress=${token}&sellAddress=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`
+    return `https://matcha.xyz/trade?buyChain=${chain}&sellChain=${chain}&buyAddress=${token}&sellAddress=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2`
   }
   if (chain === 'base') {
     const chain = 8453
-    return `https://matcha.xyz/trade?buyChain=${chain}&sellChain=${chain}&buyAddress=${token}&sellAddress=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`
+    return `https://matcha.xyz/trade?buyChain=${chain}&sellChain=${chain}&buyAddress=${token}&sellAddress=0x4200000000000000000000000000000000000006`
   }
   if (chain === 'solana') {
     // https://jup.ag/?sell=So11111111111111111111111111111111111111112&buy=${token}
@@ -141,11 +141,11 @@ function getSwapLink(chain: string, token: string) {
   if (chain === 'bsc') {
     // `https://pancakeswap.finance/swap?inputCurrency=BNB&outputCurrency=${token}`
     const chain = 56
-    return `https://matcha.xyz/trade?buyChain=${chain}&sellChain=${chain}&buyAddress=${token}&sellAddress=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`
+    return `https://matcha.xyz/trade?buyChain=${chain}&sellChain=${chain}&buyAddress=${token}&sellAddress=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c`
   }
   if (chain === 'robinhood') {
     const chain = 4663
-    return `https://matcha.xyz/trade?buyChain=${chain}&sellChain=${chain}&buyAddress=${token}&sellAddress=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`
+    return `https://matcha.xyz/trade?buyChain=${chain}&sellChain=${chain}&buyAddress=${token}&sellAddress=0x0bd7d308f8e1639fab988df18a8011f41eacad73`
   }
   logger.warn(`${chain} swap unsupported`)
   return null
