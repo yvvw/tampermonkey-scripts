@@ -2,7 +2,7 @@
 // @name         Better DEX Screener
 // @namespace    https://github.com/yvvw/browser-scripts
 // @homepageURL  https://github.com/yvvw/browser-scripts/blob/main/src/dexscreener.user.ts
-// @version      0.0.36
+// @version      0.0.37
 // @description  展开关注列表、添加外部跳转、关闭广告
 // @author       yvvw
 // @icon         https://dexscreener.com/favicon.ico
@@ -21,7 +21,7 @@ function main() {
   HTMLUtils.observe(
     document.body,
     async () => {
-      if (!document.getElementById('tv-chart-container')) return
+      if (!document.querySelector('[id^="tradingview_"]')) return
       expandWatchList()
       await addExternalLink().catch(logger.error.bind(logger))
       closeAd()
