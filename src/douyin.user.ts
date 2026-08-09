@@ -2,7 +2,7 @@
 // @name         Better Douyin
 // @namespace    https://github.com/yvvw/browser-scripts
 // @homepageURL  https://github.com/yvvw/browser-scripts/blob/main/src/douyin.user.ts
-// @version      0.0.5
+// @version      0.0.6
 // @description  网页全屏、隐藏礼物、切换画质
 // @author       yvvw
 // @icon         https://www.douyin.com/favicon.ico
@@ -28,7 +28,7 @@ function hideElements() {
   const style = document.createElement('style')
   style.textContent = `
     #BottomLayout, #ShortTouchLayout, #room_info_bar { display: none !important; }
-    #__livingPlayer__ { padding-top: 0 !important; }
+    .__livingPlayer__ { padding-top: 0 !important; }
   `
   document.head.appendChild(style)
 }
