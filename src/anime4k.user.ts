@@ -26,12 +26,7 @@ function main() {
 }
 
 type IAnime4KPipelinePreset =
-  | 'Anime4K: A'
-  | 'Anime4K: B'
-  | 'Anime4K: C'
-  | 'Anime4K: A+A'
-  | 'Anime4K: B+B'
-  | 'Anime4K: C+A'
+  'Anime4K: A' | 'Anime4K: B' | 'Anime4K: C' | 'Anime4K: A+A' | 'Anime4K: B+B' | 'Anime4K: C+A'
 
 class Anime4K {
   #presetKeyMap: { [key: string]: IAnime4KPipelinePreset | 'Clear' } = {

@@ -2,7 +2,7 @@
 // @name         Better Douyin
 // @namespace    https://github.com/yvvw/browser-scripts
 // @homepageURL  https://github.com/yvvw/browser-scripts/blob/main/src/douyin.user.ts
-// @version      0.0.7
+// @version      0.0.8
 // @description  切换画质、网页全屏、隐藏特效
 // @author       yvvw
 // @icon         https://www.douyin.com/favicon.ico
@@ -20,7 +20,7 @@ const logger = Logger.new('Better Douyin')
 window.onload = function main() {
   hideElements()
   switchHighestQuality()
-  switchWebFullscreen()
+  hideChatPanel()
   blockGift()
   blockGiftEffect()
   blockLuckyBag()
@@ -43,8 +43,8 @@ function switchHighestQuality() {
     .catch((err) => logger.error('switchHighestQuality', err))
 }
 
-function switchWebFullscreen() {
-  HTMLUtils.query(() => document.querySelector<HTMLElement>('.chatroom_close') ?? null)
+function hideChatPanel() {
+  HTMLUtils.query(() => document.querySelector<HTMLElement>('#chatroom > div > div > div > div') ?? null)
     .then((el) => el.click())
     .catch((err) => logger.error('switchWebFullscreen', err))
 }

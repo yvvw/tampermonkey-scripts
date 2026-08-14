@@ -125,11 +125,10 @@ async function addNotInterestedButton(twitterEl: HTMLDivElement) {
 
     btn.click()
 
-    const showFewerBtn = await HTMLUtils.query(
-      () =>
-        Array.from(twitterEl.querySelectorAll('button')).find(
-          (it) => it.innerText.includes('Show fewer posts') || it.innerText.includes('显示更少')
-        )!
+    const showFewerBtn = await HTMLUtils.query(() =>
+      Array.from(twitterEl.querySelectorAll('button')).find(
+        (it) => it.innerText.includes('Show fewer posts') || it.innerText.includes('显示更少')
+      )!
     )
     showFewerBtn.click()
   }

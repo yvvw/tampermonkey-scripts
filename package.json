@@ -10,16 +10,16 @@
   },
   "dependencies": {
     "anime4k-webgpu": "^1.0.0",
-    "debounce": "^2.2.0"
+    "debounce": "^3.0.0"
   },
   "devDependencies": {
-    "@prettier/plugin-oxc": "^0.0.4",
-    "@types/node": "^20.17.52",
-    "@violentmonkey/types": "^0.1.9",
-    "chokidar": "^3.6.0",
-    "esbuild": "^0.23.1",
-    "prettier": "^3.6.2",
-    "typescript": "^5.8.3"
+    "@prettier/plugin-oxc": "^0.2.2",
+    "@types/node": "^26.2.0",
+    "@violentmonkey/types": "^0.3.4",
+    "chokidar": "^5.0.0",
+    "esbuild": "^0.28.2",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2"
   },
   "packageManager": "pnpm@8.10.4+sha1.ad75b0e775742692244c8e5e17c358390abf2025"
 }
